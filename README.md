@@ -90,8 +90,11 @@ python manage.py createsuperuser
 
 cd backend
 source venv/bin/activate
+
 pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py runserver
 
 Backend runs at:
@@ -102,7 +105,9 @@ http://127.0.0.1:8000/
 2️⃣ Web Application (React)
 
 cd frontend
+
 npm install
+
 npm start
 
 Web app runs at:
@@ -115,6 +120,7 @@ http://localhost:3000/
 cd desktop_app
 
 source venv/bin/activate
+
 pip install -r requirements.txt
 
 python main.py
