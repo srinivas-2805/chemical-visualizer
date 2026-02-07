@@ -128,27 +128,41 @@ python main.py
 🧪 Sample CSV Format
 
 Equipment Name,Type,Flowrate,Pressure,Temperature
+
 Pump A,Pump,45.5,5.2,120
+
 Valve B,Valve,30.0,4.1,110
+
 Compressor A,Compressor,60.0,6.5,140
+
 HeatExchanger A,HeatExchanger,55.0,5.8,130
+
 Large CSV files are supported.
 
 📄 API Endpoints
 
 Method	Endpoint	Description
+
 POST	/api/login/	Login
+
 POST	/api/upload-csv/	Upload CSV
+
 GET	/api/history/	Dataset history
+
 GET	/api/report/{id}/	Download PDF
 
 🗂 Project Structure
 
 chemical-visualizer/
+
 │
+
 ├── backend/          # Django backend
+
 ├── frontend/         # React web app
+
 ├── desktop_app/      # PyQt5 desktop app
+
 ├── README.md
 
 
