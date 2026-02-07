@@ -79,7 +79,9 @@ If you prefer to use your own account:
 
 
 cd backend
+
 source venv/bin/activate
+
 python manage.py createsuperuser
 
 🚀 How to Run the Project
