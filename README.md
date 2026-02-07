@@ -66,7 +66,7 @@ Username: user
 Password: nagamani@9014
 
 yaml
-Copy code
+
 
 These credentials work for:
 - Web Application
@@ -94,31 +94,26 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 Backend runs at:
-
-cpp
-Copy code
 http://127.0.0.1:8000/
+
 2️⃣ Web Application (React)
 bash
-Copy code
 cd frontend
 npm install
 npm start
-Web app runs at:
 
-arduino
-Copy code
+Web app runs at:
 http://localhost:3000/
+
 3️⃣ Desktop Application (PyQt5)
 bash
-Copy code
 cd desktop_app
 source venv/bin/activate
 pip install -r requirements.txt
 python main.py
+
 🧪 Sample CSV Format
 csv
-Copy code
 Equipment Name,Type,Flowrate,Pressure,Temperature
 Pump A,Pump,45.5,5.2,120
 Valve B,Valve,30.0,4.1,110
@@ -135,13 +130,13 @@ GET	/api/report/{id}/	Download PDF
 
 🗂 Project Structure
 bash
-Copy code
 chemical-visualizer/
 │
 ├── backend/          # Django backend
 ├── frontend/         # React web app
 ├── desktop_app/      # PyQt5 desktop app
 ├── README.md
+
 📝 Notes for Reviewers
 Backend must be running before using Web or Desktop applications
 
