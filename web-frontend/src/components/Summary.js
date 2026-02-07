@@ -8,7 +8,7 @@ function Summary({ summary }) {
           <div className="summary-item" key={key}>
             <h3>{key.replaceAll("_", " ").toUpperCase()}</h3>
 
-            {/* ✅ If value is an object, render its entries */}
+            
             {typeof value === "object" && value !== null ? (
               <ul style={{ listStyle: "none", padding: 0 }}>
                 {Object.entries(value).map(([k, v]) => (

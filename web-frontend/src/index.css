@@ -1,6 +1,3 @@
-/* =========================
-   RESET & BASE
-   ========================= */
 
 * {
   box-sizing: border-box;
@@ -14,10 +11,6 @@ body {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #333;
 }
-
-/* =========================
-   LAYOUT
-   ========================= */
 
 .app-container {
   max-width: 1000px;
@@ -37,10 +30,6 @@ body {
   font-size: 24px;
   font-weight: 600;
 }
-
-/* =========================
-   BUTTONS
-   ========================= */
 
 button {
   background: linear-gradient(135deg, #43cea2, #185a9d);
@@ -62,11 +51,6 @@ button:hover {
 button.logout {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
-
-/* =========================
-   CARDS
-   ========================= */
-
 .card {
   background: white;
   padding: 22px;
@@ -84,10 +68,6 @@ button.logout {
 .card.upload {
   border-left: 6px solid #43cea2;
 }
-
-/* =========================
-   SUMMARY
-   ========================= */
 
 .summary-grid {
   display: grid;
@@ -127,10 +107,6 @@ button.logout {
   font-size: 22px;
   font-weight: bold;
 }
-
-/* =========================
-   EQUIPMENT STATISTICS
-   ========================= */
 
 .equipment-section {
   margin-top: 35px;
@@ -192,10 +168,6 @@ button.logout {
   font-weight: bold;
 }
 
-/* =========================
-   HISTORY
-   ========================= */
-
 .history-list {
   list-style: none;
 }
@@ -209,10 +181,6 @@ button.logout {
   margin-bottom: 10px;
   background: linear-gradient(135deg, #fdfbfb, #ebedee);
 }
-
-/* =========================
-   LOGIN
-   ========================= */
 
 .login-card {
   max-width: 400px;
@@ -236,9 +204,6 @@ button.logout {
   border: 1px solid #ccc;
 }
 
-/* =========================
-   CHART
-   ========================= */
 
 .chart-card {
   background: white;
@@ -266,23 +231,19 @@ button.logout {
   margin-top: 10px;
 }
 
-/* =========================
-   THEME MODES
-   ========================= */
 
-/* LIGHT MODE */
 body.light {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #333;
 }
 
-/* DARK MODE */
+
 body.dark {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #eee;
 }
 
-/* Dark mode cards */
+
 body.dark .card,
 body.dark .login-card,
 body.dark .chart-card {
@@ -290,32 +251,27 @@ body.dark .chart-card {
   color: #eee;
 }
 
-/* Dark mode headers */
 body.dark .app-header {
   color: #fff;
 }
 
-/* Dark mode history items */
+
 body.dark .history-list li {
   background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
 }
 
-/* Dark mode inputs */
+
 body.dark input {
   background: #2a2a2a;
   color: #eee;
   border: 1px solid #444;
 }
 
-/* Dark mode buttons (keep gradients visible) */
+
 body.dark button {
   opacity: 0.95;
 }
 
-
-/* =========================
-   TOAST (TOP RIGHT)
-   ========================= */
 
 .toast {
   position: fixed;
@@ -333,7 +289,7 @@ body.dark button {
   animation: toastSlideIn 0.4s ease, toastFadeOut 0.4s ease 2.6s;
 }
 
-/* Slide from right */
+
 @keyframes toastSlideIn {
   from {
     transform: translateX(120%);
@@ -345,14 +301,13 @@ body.dark button {
   }
 }
 
-/* Fade before removal */
 @keyframes toastFadeOut {
   to {
     opacity: 0;
   }
 }
 
-/* Dark mode toast */
+
 body.dark .toast {
   background: linear-gradient(135deg, #bb86fc, #3700b3);
 }

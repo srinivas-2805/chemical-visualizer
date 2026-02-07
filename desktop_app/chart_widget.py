@@ -53,7 +53,6 @@ class BarChart(QWidget):
         for bar, label, value in zip(self.bars, self.labels, self.values):
             contains, _ = bar.contains(event)
             if contains:
-                # ✅ FIX: tooltip follows mouse
                 QToolTip.showText(
                     QCursor.pos(),
                     f"<b>{label}</b><br/>Equipment Count: {value}",

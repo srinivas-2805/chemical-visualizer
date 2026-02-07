@@ -6,7 +6,7 @@ function History({ refreshKey }) {
 
   useEffect(() => {
     API.get("history/").then((res) => setDatasets(res.data));
-  }, [refreshKey]); // 👈 re-run when upload happens
+  }, [refreshKey]); 
 
   const downloadPDF = async (id, name) => {
     const res = await API.get(`report/${id}/`, {

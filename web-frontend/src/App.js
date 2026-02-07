@@ -12,12 +12,12 @@ function App() {
   const [summary, setSummary] = useState(null);
   const [historyKey, setHistoryKey] = useState(0);
 
-  // 🌙 Theme
+  
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
 
-  // 🔔 Toast
+  
   const [toast, setToast] = useState("");
 
   useEffect(() => {
@@ -51,10 +51,10 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* 🔔 Toast */}
+      
       {toast && <div className="toast">{toast}</div>}
 
-      {/* Header */}
+      
       <div className="app-header">
         <h1>⚗️ Chemical Equipment Parameter Visualizer</h1>
 
@@ -69,7 +69,7 @@ function App() {
         </div>
       </div>
 
-      {/* Upload */}
+      
       <UploadForm
         setSummary={setSummary}
         onUploadSuccess={() => {
@@ -79,7 +79,7 @@ function App() {
         }}
       />
 
-      {/* Summary & Charts */}
+      
       {summary && (
         <>
           <Summary summary={summary} />
@@ -87,7 +87,6 @@ function App() {
         </>
       )}
 
-      {/* History */}
       <History refreshKey={historyKey} />
     </div>
   );

@@ -57,7 +57,7 @@ class LoginWindow(QWidget):
         self.is_logging_in = True
         self.login_btn.setEnabled(False)
 
-        # 🔐 AUTH ONLY
+        
         try:
             api.login(username, password)
         except Exception:
@@ -66,7 +66,7 @@ class LoginWindow(QWidget):
             self.login_btn.setEnabled(True)
             return
 
-        # 🖥️ UI SUCCESS
+        
         try:
             self.on_success()
             self.close()

@@ -1,6 +1,4 @@
-# =========================
-# GLOBAL APP STYLES
-# =========================
+
 
 LIGHT_STYLE = """
 QWidget {
@@ -70,9 +68,6 @@ QPushButton {
 }
 """
 
-# =========================
-# HISTORY LIST STYLES
-# =========================
 
 LIGHT_LIST_STYLE = """
 QListWidget {

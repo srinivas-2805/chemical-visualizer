@@ -19,15 +19,15 @@ ChartJS.register(
 );
 
 function Charts({ summary }) {
-  const equipmentStats = summary?.type_distribution; // ✅ FIX HERE
+  const equipmentStats = summary?.type_distribution; 
 
   if (!equipmentStats) return null;
 
   const isDark = document.body.classList.contains("dark");
 
 const chartColors = isDark
-  ? ["#bb86fc", "#03dac6", "#cf6679", "#ffd166", "#4dd0e1"]  // dark theme
-  : ["#ff6384", "#36a2eb", "#4bc0c0", "#ffcd56", "#9966ff"]; // light theme
+  ? ["#bb86fc", "#03dac6", "#cf6679", "#ffd166", "#4dd0e1"]  
+  : ["#ff6384", "#36a2eb", "#4bc0c0", "#ffcd56", "#9966ff"]; 
 
 
   const data = {

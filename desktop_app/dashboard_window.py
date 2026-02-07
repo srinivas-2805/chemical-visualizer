@@ -31,9 +31,12 @@ class Dashboard(QWidget):
         main_layout = QVBoxLayout(self)
         main_layout.setSpacing(10)
 
-        # ================= HEADER =================
-        header = QLabel("📊 Upload History")
-        header.setStyleSheet("font-size:20px; font-weight:600;")
+        
+        header = QLabel("⚗️ Chemical Equipment Parameter Visualizer")
+        header.setStyleSheet("""
+          font-size:22px;
+           font-weight:700; """) 
+
 
         btn_layout = QHBoxLayout()
 
@@ -61,16 +64,16 @@ class Dashboard(QWidget):
         divider.setFixedHeight(1)
         divider.setStyleSheet("background:#555; margin:6px 0;")
 
-        # ================= FILE LABEL =================
+        
         self.selected_file_label = QLabel("No file selected")
         self.selected_file_label.setStyleSheet("color:#888; margin:4px;")
 
-        # ================= SEARCH =================
+        
         self.search_input = QLineEdit()
         self.search_input.setPlaceholderText("Search datasets...")
         self.search_input.textChanged.connect(self.apply_filter)
 
-        # ================= SUMMARY =================
+        
         self.summary_box = QGroupBox("📈 Dataset Summary")
         self.summary_box.hide()
 
@@ -97,11 +100,19 @@ class Dashboard(QWidget):
 
         self.summary_box.setLayout(grid)
 
-        # ================= CHART =================
+        
         self.chart = BarChart()
         self.chart.hide()
 
-        # ================= LIST =================
+        history_label = QLabel("📁 Upload History")
+        history_label.setStyleSheet("""
+    font-size:16px;
+    font-weight:600;
+    margin-top:10px;
+""")
+
+
+       
         self.list_widget = QListWidget()
         self.list_widget.currentRowChanged.connect(self.update_summary)
         self.apply_list_theme()
@@ -110,7 +121,7 @@ class Dashboard(QWidget):
         self.status_label.setAlignment(Qt.AlignCenter)
         self.status_label.setStyleSheet("color:#888;")
 
-        # ================= LAYOUT ORDER =================
+       
         main_layout.addWidget(header)
         main_layout.addLayout(btn_layout)
         main_layout.addWidget(divider)
@@ -118,17 +129,17 @@ class Dashboard(QWidget):
         main_layout.addWidget(self.search_input)
         main_layout.addWidget(self.summary_box)
         main_layout.addWidget(self.chart)
+        main_layout.addWidget(history_label)
         main_layout.addWidget(self.list_widget)
         main_layout.addWidget(self.status_label)
 
         self.load_history()
-        # 🔁 AUTO REFRESH TIMER
         self.refresh_timer = QTimer(self)
         self.refresh_timer.timeout.connect(self.auto_refresh)
         self.refresh_timer.start(5000)  # 5 seconds
 
 
-    # ================= THEME =================
+    
     def update_theme_icon(self):
         self.theme_btn.setText("☀️ Light" if load_theme() == "dark" else "🌙 Dark")
 
@@ -146,7 +157,7 @@ class Dashboard(QWidget):
             DARK_LIST_STYLE if load_theme() == "dark" else LIGHT_LIST_STYLE
         )
 
-    # ================= DATA =================
+    
     def load_history(self, auto_select_latest=False):
         self.datasets = api.get_history()
         self.filtered = self.datasets.copy()
@@ -171,7 +182,7 @@ class Dashboard(QWidget):
         self.render_list()
         self.clear_summary()
 
-    # ================= SUMMARY =================
+    
     def clear_summary(self):
         for lbl in (
             self.total_label, self.flow_label,
@@ -220,7 +231,7 @@ class Dashboard(QWidget):
        
 
 
-    # ================= CSV =================
+    
     def choose_csv(self):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Select CSV", "", "CSV Files (*.csv)"
@@ -237,7 +248,7 @@ class Dashboard(QWidget):
         except Exception as e:
             QMessageBox.critical(self, "Upload Failed", str(e))
 
-    # ================= PDF =================
+    
     def download_pdf(self):
         index = self.list_widget.currentRow()
         if index < 0:
@@ -266,22 +277,22 @@ class Dashboard(QWidget):
         try:
             latest = api.get_history()
         except Exception:
-            return  # backend unreachable → ignore silently
+            return  
         if not latest:
             return
 
-        # Detect change (new dataset uploaded)
+        
         if not self.datasets or latest[0]["id"] != self.datasets[0]["id"]:
             self.datasets = latest
             self.filtered = latest.copy()
             self.render_list()
 
-            # Auto-select latest dataset
+            
             self.list_widget.setCurrentRow(0)
             Toast("🔄 New dataset detected", True, self).show_top_right()
 
 
-    # ================= LOGOUT =================
+   
     def handle_logout(self):
         self.refresh_timer.stop()
         api.logout()

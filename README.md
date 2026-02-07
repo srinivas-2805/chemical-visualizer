@@ -1,195 +1,156 @@
-⚗️ Chemical Equipment Parameter Visualizer
+# ⚗️ Chemical Equipment Parameter Visualizer
 
-A full-stack application to upload, analyze, visualize, and export chemical equipment datasets.
-The project includes both a Web Application and a Desktop Application, backed by a Django REST API.
+A full-stack application that allows users to **upload CSV files containing chemical equipment data**, automatically **analyze parameters**, **visualize results**, and **download PDF reports**.  
+The project includes both a **Web Application** and a **Desktop Application**, powered by a common backend.
 
-🚀 Features
-✅ Common Features (Web & Desktop)
+---
 
-Secure login using Token Authentication
+## 📌 Project Overview
 
-Upload large CSV datasets
+The Chemical Equipment Parameter Visualizer helps users to:
+- Upload CSV datasets
+- View computed summaries
+- Visualize equipment distributions using charts
+- Maintain upload history
+- Download PDF reports
+- Access the system via Web or Desktop
 
-Automatic dataset analysis:
+---
 
-Total equipment count
+## 🧱 Tech Stack
 
-Average flowrate
+### Backend
+- Django
+- Django REST Framework
+- Token Authentication
+- PDF generation
 
-Average pressure
+### Web Frontend
+- React.js
+- Axios
+- Chart.js
+- CSS (Dark / Light mode)
 
-Average temperature
+### Desktop Application
+- Python
+- PyQt5
+- Matplotlib
+- Requests
 
-Equipment type distribution
+---
 
-View upload history (latest datasets first)
+## ✨ Features
 
-Download PDF reports
+- 🔐 Secure login (token-based)
+- 📂 CSV upload & validation
+- 📊 Dataset summary:
+  - Total Count
+  - Average Flowrate
+  - Average Pressure
+  - Average Temperature
+  - Equipment Type Distribution
+- 📈 Interactive bar charts with hover tooltips
+- 🕘 Dataset upload history
+- 📄 PDF report download
+- 🌙 Dark / Light mode (Web & Desktop)
+- 🔄 Auto-refresh after upload
+- 💻 Desktop app with modern UI
 
-Dark / Light theme support
+---
 
-Search datasets by name
+## 🔑 Demo Login Credentials 
 
-🌐 Web Application (React)
-Tech Stack
+To make testing easy, the following **demo account** is provided:
 
-Frontend: React, Axios, Chart.js
+Username: user
+Password: nagamani@9014
 
-Backend: Django, Django REST Framework
 
-Auth: Token Authentication
+These credentials work for:
+- Web Application
+- Desktop Application
 
-Web Features
+> ⚠️ Credentials are provided **only for evaluation purposes**.
 
-Interactive dashboard
 
-Animated summary cards
+## 🛠 Create Your Own User (Optional)
 
-Colorful bar charts with hover tooltips
+If you prefer to use your own account:
 
-Toast notifications
 
-Responsive UI
-
-Run Web App
-# Backend
 cd backend
+source venv/bin/activate
+python manage.py createsuperuser
+
+🚀 How to Run the Project
+
+1️⃣ Backend (Django)
+
+cd backend
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver
 
-# Frontend
-cd web-frontend
+Backend runs at:
+
+http://127.0.0.1:8000/
+
+
+2️⃣ Web Application (React)
+
+cd frontend
 npm install
 npm start
 
-🖥️ Desktop Application (PyQt5)
-Tech Stack
+Web app runs at:
 
-UI: PyQt5
+http://localhost:3000/
 
-Charts: Matplotlib
 
-API: Django REST backend
+3️⃣ Desktop Application (PyQt5)
 
-Storage: Local token & theme persistence
-
-Desktop Features
-
-Native desktop UI
-
-Auto-login using stored token
-
-Upload CSV directly from file system
-
-Dataset summary panel
-
-Interactive bar chart with hover tooltips
-
-PDF download
-
-Dark / Light theme toggle
-
-Toast notifications
-
-Auto refresh after upload
-
-Run Desktop App
 cd desktop_app
+
+source venv/bin/activate
+pip install -r requirements.txt
+
 python main.py
 
-📊 Dataset Summary Metrics
-
-For every uploaded CSV, the system computes:
-
-Total Count
-
-Average Flowrate
-
-Average Pressure
-
-Average Temperature
-
-Equipment Type Distribution
-
-These results are:
-
-Shown visually (charts)
-
-Displayed numerically
-
-Included in downloadable PDF reports
-
-📄 CSV Format
-
-Example CSV structure:
+🧪 Sample CSV Format
 
 Equipment Name,Type,Flowrate,Pressure,Temperature
 Pump A,Pump,45.5,5.2,120
-Valve B,Valve,32.5,4.3,112
+Valve B,Valve,30.0,4.1,110
 Compressor A,Compressor,60.0,6.5,140
-HeatExchanger A,HeatExchanger,55.0,5.8,135
-Reactor A,Reactor,70.0,7.2,150
+HeatExchanger A,HeatExchanger,55.0,5.8,130
+Large CSV files are supported.
 
-🔐 Authentication Flow
+📄 API Endpoints
 
-User logs in
-
-Backend returns a token
-
-Token is stored:
-
-Web → localStorage
-
-Desktop → local file
-
-Token is sent with every API request
-
-📦 API Endpoints
 Method	Endpoint	Description
-POST	/api/login/	User login
+POST	/api/login/	Login
 POST	/api/upload-csv/	Upload CSV
 GET	/api/history/	Dataset history
-GET	/api/report/<id>/	Download PDF
-🧠 Architecture Overview
+GET	/api/report/{id}/	Download PDF
+
+🗂 Project Structure
+
 chemical-visualizer/
 │
-├── backend/          # Django REST API
-│
-├── web-frontend/     # React Web App
-│
-├── desktop_app/      # PyQt5 Desktop App
-│
-└── README.md
+├── backend/          # Django backend
+├── frontend/         # React web app
+├── desktop_app/      # PyQt5 desktop app
+├── README.md
 
-✅ Requirements Coverage
 
-✔ CSV upload & validation
-✔ Data analysis
-✔ Charts & visualization
-✔ PDF export
-✔ Authentication
-✔ Web UI
-✔ Desktop UI
-✔ Clean UI / UX
-✔ Dark & Light themes
+📝 Notes for Reviewers
 
-📌 Notes
+Backend must be running before using Web or Desktop applications
 
-Only the latest 5 datasets are retained (older ones are auto-deleted)
+Summary and charts appear only after selecting a dataset
 
-Large CSV files are supported
+Desktop app supports auto-login using saved token
 
-Backend is reusable for both clients
+Web and Desktop share the same backend APIs
 
-🏁 Conclusion
-
-This project demonstrates:
-
-Full-stack development
-
-REST API design
-
-Frontend visualization
-
-Desktop application development
-
-Clean UI/UX practices
