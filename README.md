@@ -63,9 +63,8 @@ The Chemical Equipment Parameter Visualizer helps users to:
 To make testing easy, the following **demo account** is provided:
 
 Username: user
-Password: nagamani@9014
 
-yaml
+Password: nagamani@9014
 
 
 These credentials work for:
@@ -80,14 +79,13 @@ These credentials work for:
 
 If you prefer to use your own account:
 
-```bash
+```
 cd backend
 source venv/bin/activate
 python manage.py createsuperuser
 🚀 How to Run the Project
 1️⃣ Backend (Django)
-bash
-Copy code
+
 cd backend
 source venv/bin/activate
 pip install -r requirements.txt
@@ -97,7 +95,7 @@ Backend runs at:
 http://127.0.0.1:8000/
 
 2️⃣ Web Application (React)
-bash
+
 cd frontend
 npm install
 npm start
@@ -106,14 +104,14 @@ Web app runs at:
 http://localhost:3000/
 
 3️⃣ Desktop Application (PyQt5)
-bash
+
 cd desktop_app
 source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 
 🧪 Sample CSV Format
-csv
+
 Equipment Name,Type,Flowrate,Pressure,Temperature
 Pump A,Pump,45.5,5.2,120
 Valve B,Valve,30.0,4.1,110
@@ -129,7 +127,7 @@ GET	/api/history/	Dataset history
 GET	/api/report/{id}/	Download PDF
 
 🗂 Project Structure
-bash
+
 chemical-visualizer/
 │
 ├── backend/          # Django backend
