@@ -58,13 +58,15 @@ The Chemical Equipment Parameter Visualizer helps users to:
 
 ---
 
-## 🔑 Demo Login Credentials 
+## 🔑 Demo Login Credentials (For Reviewers)
 
 To make testing easy, the following **demo account** is provided:
 
 Username: user
 Password: nagamani@9014
 
+yaml
+Copy code
 
 These credentials work for:
 - Web Application
@@ -72,102 +74,75 @@ These credentials work for:
 
 > ⚠️ Credentials are provided **only for evaluation purposes**.
 
+---
 
 ## 🛠 Create Your Own User (Optional)
 
 If you prefer to use your own account:
 
-
+```bash
 cd backend
-
 source venv/bin/activate
-
 python manage.py createsuperuser
-
 🚀 How to Run the Project
-
 1️⃣ Backend (Django)
-
+bash
+Copy code
 cd backend
 source venv/bin/activate
-
 pip install -r requirements.txt
-
 python manage.py migrate
-
 python manage.py runserver
-
 Backend runs at:
 
+cpp
+Copy code
 http://127.0.0.1:8000/
-
-
 2️⃣ Web Application (React)
-
+bash
+Copy code
 cd frontend
-
 npm install
-
 npm start
-
 Web app runs at:
 
+arduino
+Copy code
 http://localhost:3000/
-
-
 3️⃣ Desktop Application (PyQt5)
-
+bash
+Copy code
 cd desktop_app
-
 source venv/bin/activate
-
 pip install -r requirements.txt
-
 python main.py
-
 🧪 Sample CSV Format
-
+csv
+Copy code
 Equipment Name,Type,Flowrate,Pressure,Temperature
-
 Pump A,Pump,45.5,5.2,120
-
 Valve B,Valve,30.0,4.1,110
-
 Compressor A,Compressor,60.0,6.5,140
-
 HeatExchanger A,HeatExchanger,55.0,5.8,130
-
 Large CSV files are supported.
 
 📄 API Endpoints
-
 Method	Endpoint	Description
-
 POST	/api/login/	Login
-
 POST	/api/upload-csv/	Upload CSV
-
 GET	/api/history/	Dataset history
-
 GET	/api/report/{id}/	Download PDF
 
 🗂 Project Structure
-
+bash
+Copy code
 chemical-visualizer/
-
 │
-
 ├── backend/          # Django backend
-
 ├── frontend/         # React web app
-
 ├── desktop_app/      # PyQt5 desktop app
-
 ├── README.md
-
-
 📝 Notes for Reviewers
-
 Backend must be running before using Web or Desktop applications
 
 Summary and charts appear only after selecting a dataset
