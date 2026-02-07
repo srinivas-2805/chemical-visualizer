@@ -1,0 +1,358 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.app-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+
+button.logout {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+}
+
+.card.upload {
+  border-left: 6px solid #43cea2;
+}
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.summary-item {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.summary-item:nth-child(2) {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.summary-item:nth-child(3) {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.summary-item:nth-child(4) {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.summary-item h3 {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.summary-item p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* =========================
+   EQUIPMENT STATISTICS
+   ========================= */
+
+.equipment-section {
+  margin-top: 35px;
+}
+
+.equipment-section h2 {
+  margin-bottom: 15px;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.equipment-card {
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
+}
+
+.equipment-card:nth-child(1) {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+.equipment-card:nth-child(2) {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+.equipment-card:nth-child(3) {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.equipment-card:nth-child(4) {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #333;
+}
+
+.equipment-card:nth-child(5) {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+.equipment-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.equipment-card p {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* =========================
+   HISTORY
+   ========================= */
+
+.history-list {
+  list-style: none;
+}
+
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.login-card {
+  max-width: 400px;
+  margin: 120px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* =========================
+   CHART
+   ========================= */
+
+.chart-card {
+  background: white;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.chart-card canvas {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* =========================
+   THEME MODES
+   ========================= */
+
+/* LIGHT MODE */
+body.light {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+}
+
+/* DARK MODE */
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
+}
+
+/* Dark mode cards */
+body.dark .card,
+body.dark .login-card,
+body.dark .chart-card {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+/* Dark mode headers */
+body.dark .app-header {
+  color: #fff;
+}
+
+/* Dark mode history items */
+body.dark .history-list li {
+  background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
+}
+
+/* Dark mode inputs */
+body.dark input {
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+/* Dark mode buttons (keep gradients visible) */
+body.dark button {
+  opacity: 0.95;
+}
+
+
+/* =========================
+   TOAST (TOP RIGHT)
+   ========================= */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+
+  animation: toastSlideIn 0.4s ease, toastFadeOut 0.4s ease 2.6s;
+}
+
+/* Slide from right */
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade before removal */
+@keyframes toastFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Dark mode toast */
+body.dark .toast {
+  background: linear-gradient(135deg, #bb86fc, #3700b3);
+}
